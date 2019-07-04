@@ -1,0 +1,10 @@
+<a class="btn" [routerLink]="['/']">Show chores</a>
+<br/><br/>
+<form [formGroup]="addTodoForm">
+  <label>Assign task: <input type="text" formControlName="description"></label>
+   <label> To: <select formControlName="chosenSubject">
+    <option *ngFor="let subject of allSubjects" [value]="subject._id">{{subject.name}}</option>
+  </select></label>
+</form>
+<br/>
+<button style="cursor: pointer" (click)="addTodo()">Submit</button>

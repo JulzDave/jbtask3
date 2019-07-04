@@ -1,0 +1,50 @@
+.todo {
+    display: inline-flex;
+}
+
+.delBtn {
+    display: none;
+    cursor: pointer;
+    color: red;
+    font-weight: bold;
+    margin-left: -45px;
+    font-size: 16px;
+}
+
+.todo:hover span:nth-child(2) {
+    display: block;
+}
+
+.name{
+    list-style: none;
+    font-family: fantasy;
+    background: burlywood;
+    padding: 10px;
+    font-style: italic;
+    text-decoration: underline;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+}
+
+.name:after{
+    content: ":"
+}
+
+.todos {
+    background-color: burlywood;
+    padding: 10px;
+    text-indent: 25px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    font-family: monospace;
+    white-space: pre;
+    margin-top: -8px;
+}
+
+.todoLi {
+    background: wheat;
+    padding: 6px;
+    border-radius: 11px;
+    padding-right: 31px;
+    text-transform: capitalize;
+}

@@ -1,0 +1,11 @@
+body{
+    margin: 50px;
+}
+
+.btn {
+    padding: 10px;
+    background: lightgray;
+    border: 1px ridge black;
+    font-family: sans-serif;
+    position: relative;
+}
