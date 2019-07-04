@@ -16,7 +16,7 @@ app.use(cookieParser());
 
 const mongoose = require('mongoose')
 
-mongoose.connect('mongodb://localhost:27017/training0419')
+mongoose.connect('mongodb://localhost:27017/training0419',{ useNewUrlParser: true })
 
 app.use(express.static(path.join(__dirname, 'public')));
 
