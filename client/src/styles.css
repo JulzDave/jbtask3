@@ -1,12 +1,26 @@
 body{
-    margin: 50px;
     background-color: black;
+    overflow-x: hidden;
 }
 
-.btn {
-    padding: 10px;
-    background: lightgray;
-    border: 1px ridge black;
+.nav{
+    background: linear-gradient(180deg, gold, transparent);    text-align: center;
+    padding: 15px;
+    width: 100%;
+    margin: -9px;
+    font-family: monospace;
+}
+
+a.navLink {
+    color: ghostwhite;
+}
+a.navLink:active {
+    color: red;
+}
+
+.navHeader{
+    color: white;
     font-family: sans-serif;
-    position: relative;
+    letter-spacing: 12px;
+    text-shadow: 0 0 7px black;
 }

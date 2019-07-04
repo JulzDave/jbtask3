@@ -1,9 +1,11 @@
-<a class="btn" [routerLink]="['/add']">add new chores</a>
-<div *ngFor="let subject of todos">
-  <ul *ngIf="subject.todos.length > 0">
+<!-- <a class="btn" [routerLink]="['/add']">add new chores</a> -->
+<div class="todosCont">
+  <div *ngFor="let subject of todos">
+    <ul *ngIf="subject.todos.length > 0" style="padding:0">
       <li class="name">{{ subject.name }}</li>
       <ul class="todos" *ngFor="let todo of subject.todos">
-          <span class="todo"><li class="todoLi" id="{{ todo._id }}">{{ todo.Description }}</li><span class="delBtn" (click)="deleteTodo($event)">&times;</span></span>
+        <span class="todo"><li class="todoLi" id="{{ todo._id }}">{{ todo.Description }}</li><span class="delBtn" (click)="deleteTodo($event)">&times;</span></span>
       </ul>
-  </ul>
+    </ul>
+  </div>
 </div>
