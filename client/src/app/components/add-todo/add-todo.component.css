@@ -5,11 +5,37 @@
 }
 
 .alert{
-    color:rgb(250,60,60);
-    text-shadow: 0 0 7px red;
+    color:rgb(255, 0, 0);
 }
 
 .redirect{
-    color:rgb(60,250,60);
-    text-shadow: 0 0 7px green;
+    color:rgb(5, 201, 5);
+}
+
+.submit{
+    cursor: pointer;
+    border: 3px outset darkslategray;
+    background: #ff8c00;
+    padding: 10px;
+    font-family: sans-serif;
+    font-weight: bold;
+    border-radius: 5px;
+}
+
+.submit:hover{
+    border: 3px inset darkslategray;
+    background:#FF8836
+}
+
+.input{
+    border: none;
+    border-bottom: 2px solid black;
+    outline: none;
+}
+
+.select{
+    padding: 5px;
+    font-weight: bold;
+    font-style: italic;
+    text-align: center;
 }

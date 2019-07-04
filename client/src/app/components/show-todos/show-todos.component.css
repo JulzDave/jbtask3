@@ -23,7 +23,7 @@
 .name{
     list-style: none;
     font-family: fantasy;
-    background: burlywood;
+    background: darkorange;
     padding: 10px;
     font-style: italic;
     text-decoration: underline;
@@ -36,7 +36,7 @@
 }
 
 .todos {
-    background-color: burlywood;
+    background-color: darkorange;
     padding: 10px;
     text-indent: 25px;
     border-bottom-left-radius: 10px;
@@ -47,7 +47,7 @@
 }
 
 .todoLi {
-    background: wheat;
+    background: white;
     padding: 6px;
     border-radius: 11px;
     padding-right: 31px;
