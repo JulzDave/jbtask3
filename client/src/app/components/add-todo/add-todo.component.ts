@@ -16,6 +16,8 @@ export class AddTodoComponent implements OnInit {
   description: string;
   chosenSubject:string;
   submitted:boolean = false;
+  redirecting:boolean = false;
+
 
   addTodoForm: FormGroup = new FormGroup({
 
@@ -29,6 +31,7 @@ export class AddTodoComponent implements OnInit {
 
   addTodo(){
     if(this.addTodoForm.valid){
+      this.redirecting = true;
     this.todosService.addTodo({
          Description:this.addTodoForm.controls.description.value,
          subject:this.addTodoForm.controls.chosenSubject.value

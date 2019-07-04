@@ -1,14 +1,15 @@
 <div class="addTodoCont">
   <form [formGroup]="addTodoForm" style="color:white;font-weight:bold;">
-      <label>Assign task: <input type="text" formControlName="description"></label>
+      <label>Assign task: <input type="text" formControlName="description" (input)="this.submitted = false"></label>
       <label> To: <select formControlName="chosenSubject">
     <option *ngFor="let subject of allSubjects" [value]="subject._id">{{subject.name}}</option>
   </select></label>
 </form>
 <div class="alert" *ngIf="submitted && checkErr"> 
-  <span *ngIf="checkErr.required"> <br/>Please assign a task first...</span>
-  <span *ngIf="checkErr.minlength"> <br/>Task must consist of minimum six characters...</span>
+  <span *ngIf="checkErr.required"><br/>Please assign a task first...</span>
+  <span *ngIf="checkErr.minlength"><br/>Task must consist of minimum six characters...</span>
 </div>
+<div class="redirect" *ngIf="redirecting"><br/>Redirecting...</div>
 <br/>
 <button style="cursor: pointer" (click)="addTodo()">Submit</button>
 </div>
