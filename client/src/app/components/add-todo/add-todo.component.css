@@ -1,4 +1,10 @@
 .addTodoCont {
     position: relative;
-    top: 20px;
+    top: 50px;
+    text-align: center;
+}
+
+.alert{
+    color:rgb(250,60,60);
+    text-shadow: 0 0 7px red;
 }

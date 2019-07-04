@@ -15,8 +15,7 @@ export class AddTodoComponent implements OnInit {
   allSubjects: any;
   description: string;
   chosenSubject:string;
-
-
+  submitted:boolean = false;
 
   addTodoForm: FormGroup = new FormGroup({
 
@@ -26,6 +25,8 @@ export class AddTodoComponent implements OnInit {
   }
   );
 
+  get checkErr(): any { return this.addTodoForm.controls.description.errors };
+
   addTodo(){
     if(this.addTodoForm.valid){
     this.todosService.addTodo({
@@ -34,7 +35,7 @@ export class AddTodoComponent implements OnInit {
         }).subscribe(data => {
           this.router.navigate(['/']);
     });
-  }
+  } else this.submitted = true;
   }
 
   ngOnInit() {
