@@ -5,11 +5,11 @@
     <option *ngFor="let subject of allSubjects" [value]="subject._id">{{subject.name}}</option>
   </select></label>
 </form>
-<div class="alert" *ngIf="submitted && checkErr"> 
-  <span *ngIf="checkErr.required"><br/>Please assign a task first...</span>
-  <span *ngIf="checkErr.minlength"><br/>Task must consist of minimum six characters...</span>
-</div>
-<div class="redirect" *ngIf="redirecting"><br/>Redirecting...</div>
 <br/>
 <button class="submit" (click)="addTodo()">Submit</button>
+    <div class="alert" *ngIf="submitted && checkErr"> 
+      <span *ngIf="checkErr.required"><br/>Please assign a task first...</span>
+      <span *ngIf="checkErr.minlength"><br/>Task must consist of minimum six characters...</span>
+    </div>
+    <div class="redirect" *ngIf="redirecting"><br/>Redirecting...</div>
 </div>

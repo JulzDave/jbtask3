@@ -6,31 +6,41 @@
 
 .alert{
     color:rgb(255, 0, 0);
+    text-shadow: 0 0 5px white;
 }
 
 .redirect{
-    color:rgb(5, 201, 5);
+    color: rgb(0, 150, 0);
+    font-weight: bold;
+    text-shadow: 0 0 12px white;
+    font-family: sans-serif;
+    text-shadow: 0 0 5px white;
 }
 
 .submit{
     cursor: pointer;
     border: 3px outset darkslategray;
+    border-radius: 5px;
     background: #ff8c00;
     padding: 10px;
     font-family: sans-serif;
     font-weight: bold;
-    border-radius: 5px;
+    outline: none;
 }
 
 .submit:hover{
     border: 3px inset darkslategray;
-    background:#FF8836
+    background:rgb(255, 103, 0)
+}
+.submit:active{
+    background: rgb(255, 80, -62);
 }
 
 .input{
+    background: transparent;
     border: none;
-    border-bottom: 2px solid black;
     outline: none;
+    border-bottom: 2px solid black;
 }
 
 .select{
@@ -38,4 +48,7 @@
     font-weight: bold;
     font-style: italic;
     text-align: center;
+    border-radius: 19px/44px;
+    outline: none;
+    border: 2px solid black;
 }
