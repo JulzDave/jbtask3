@@ -5,21 +5,19 @@ const Subject = require('../model/subject')
 const Todo = require('../model/todos')
 
 //  2) - א
-router.get('/subject', function(req, res, next) {
-  Subject.find().then(data => {
-    res.json(data)
-});
+router.get('/subject', async (req, res) => {
+  const data = await Subject.find()
+  await res.json(data);
 });
 
 
 //  2) - ב
-router.get('/todo', function(req, res, next) {
-  Todo.find().then(data => {
-    res.json(data)
-});
+router.get('/todo', async (req, res) => {
+  const data = await Todo.find();
+  await res.json(data)
 });
 
-router.post('/subject', function(req, res, next) {
+router.post('/subject', (req, res) => {
   const member = new Subject ({
     name: req.body.name,
     nickname: req.body.nickname,
@@ -33,7 +31,7 @@ else res.json(result)
 });
 
 //2) - ג
-router.post('/todo', function(req, res, next) {
+router.post('/todo', (req, res) => {
   const todo = new Todo ({
     Description: req.body.Description,
     Date: new Date(),
@@ -47,8 +45,9 @@ else res.json(result)
 });
 
 
-router.delete('/todo/:id', (req, res) =>{
-Todo.deleteOne({_id:req.params.id}).then(data => res.json(data))
+router.delete('/todo/:id', async (req, res) =>{
+  const data = await Todo.deleteOne({_id:req.params.id})
+  await res.json(data)
 });
 
 module.exports = router;

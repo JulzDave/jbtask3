@@ -1,14 +1,11 @@
 import { Injectable } from '@angular/core';
 
-import { HttpClient, HttpErrorResponse } from '@angular/common/http';
-import { HttpHeaders } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { HttpClient, HttpHeaders, HttpErrorResponse } from '@angular/common/http';
+import { Observable, throwError } from 'rxjs';
+import { catchError } from 'rxjs/operators';
+
 import { ITodo } from '../models/todo.model'
 import { ISubject } from '../models/subjects.model'
-import { catchError } from 'rxjs/operators';
-import { throwError } from "rxjs";
-
-
 
 const httpOptions: any = {
   headers: new HttpHeaders({
