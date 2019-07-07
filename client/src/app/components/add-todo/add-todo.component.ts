@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { TodosService } from '../../services/todos.service'
 import { FormGroup, FormControl, Validators, ValidationErrors } from '@angular/forms';
 import { Router } from '@angular/router';
+
+import { TodosService } from '../../services/todos.service'
+
 import { ISubject } from '../../models/subjects.model'
 
 @Component({
@@ -35,7 +37,7 @@ export class AddTodoComponent implements OnInit {
       this.todosService.addTodo({
         Description: this.addTodoForm.controls.description.value,
         subject: this.addTodoForm.controls.chosenSubject.value
-      }).subscribe(data => {
+      }).subscribe(() => {
         this.router.navigate(['/']);
       });
     } else this.submitted = true;

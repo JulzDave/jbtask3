@@ -48,6 +48,7 @@
     font-family: monospace;
     white-space: pre;
     margin-top: -8px;
+    contain: content;
 }
 
 .todoLi {
@@ -56,4 +57,13 @@
     border-radius: 11px;
     padding-right: 31px;
     text-transform: capitalize;
+    white-space: normal;
+}
+
+
+
+@media only screen and (max-width:200px) {
+    .todoLi{
+        width: min-content;
+    }
 }

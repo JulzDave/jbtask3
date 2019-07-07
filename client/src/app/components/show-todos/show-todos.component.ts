@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+
 import { TodosService } from '../../services/todos.service';
+
 import { ISubject } from '../../models/subjects.model'
 import { ITodo } from '../../models/todo.model'
 import { ITodos } from '../../models/todos.model'
@@ -22,7 +24,7 @@ export class ShowTodosComponent implements OnInit {
     const itemToDelete: string = ev.target.previousElementSibling.id;
     this.todosService.deleteTodo(itemToDelete).subscribe(() => {
       for (let i: number = 0; i < this.todos.length; i++) {
-        const index = this.todos[i].todos.findIndex(item => item._id === ev.target.previousElementSibling.id)
+        const index = this.todos[i].todos.findIndex(item => item._id === ev.target.previousElementSibling.id);
         if (index !== -1) {
           this.todos[i].todos.splice(index, 1);
         }
@@ -46,5 +48,4 @@ export class ShowTodosComponent implements OnInit {
       }
     })
   }
-
 }
