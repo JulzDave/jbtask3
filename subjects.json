@@ -1,4 +1,4 @@
-{"_id":{"$oid":"5d1dd5d93437a51fa0eaf377"},"name":"Julian","nickname":"Yuna","role":"Big Brother","__v":{"$numberInt":"0"}}
-{"_id":{"$oid":"5d1df8ef8109013b2876852a"},"name":"Robin","nickname":"Gootz","role":"Little Brother","__v":{"$numberInt":"0"}}
-{"_id":{"$oid":"5d1e13898916bc417cb1360a"},"name":"Avraham","nickname":"Avi","role":"Father","__v":{"$numberInt":"0"}}
-{"_id":{"$oid":"5d1e13aa8916bc417cb1360b"},"name":"Marian","nickname":"Marjolein","role":"Mother","__v":{"$numberInt":"0"}}
+{"_id":{"$oid":"5d1dd5d93437a51fa0eaf377"},"name":"aviad","nickname":"av","role":"Big Brother","__v":{"$numberInt":"0"}}
+{"_id":{"$oid":"5d1df8ef8109013b2876852a"},"name":"evyatar","nickname":"ev","role":"Little Brother","__v":{"$numberInt":"0"}}
+{"_id":{"$oid":"5d1e13898916bc417cb1360a"},"name":"avraham","nickname":"avi","role":"Father","__v":{"$numberInt":"0"}}
+{"_id":{"$oid":"5d1e13aa8916bc417cb1360b"},"name":"miri","nickname":"mirmur","role":"Mother","__v":{"$numberInt":"0"}}

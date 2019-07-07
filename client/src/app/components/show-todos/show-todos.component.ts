@@ -39,7 +39,7 @@ export class ShowTodosComponent implements OnInit {
         this.todosService.getTodos().subscribe((todoData: ITodo[]) => {
           for (let i: number = 0; i < this.subjects.length; i++) {
             this.todos.push({
-              name: this.subjects[i].name, todos: todoData.filter((todo) => {
+              name: this.subjects[i].name, role: this.subjects[i].role, todos: todoData.filter((todo) => {
                 return todo.subject === this.subjects[i]._id;
               })
             })

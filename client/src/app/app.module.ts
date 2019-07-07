@@ -8,7 +8,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { AddTodoComponent } from './components/add-todo/add-todo.component';
 
 import { ShowTodosComponent } from './components/show-todos/show-todos.component';
-import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component'
+import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
+import { CapitalizePipe } from './pipes/capitalize.pipe'
 
 @NgModule({
   declarations: [
@@ -16,6 +17,7 @@ import { PageNotFoundComponent } from './components/page-not-found/page-not-foun
     AddTodoComponent,
     ShowTodosComponent,
     PageNotFoundComponent,
+    CapitalizePipe,
   ],
   imports: [
     BrowserModule,
