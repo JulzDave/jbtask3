@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { FormGroup, FormControl, Validators, ValidationErrors } from '@angular/forms';
 import { Router } from '@angular/router';
 
@@ -12,6 +12,8 @@ import { ISubject } from '../../models/subjects.model'
   styleUrls: ['./add-todo.component.css']
 })
 export class AddTodoComponent implements OnInit {
+@ViewChild('this.addTodoForm') public shareAddTodoForm: any
+@ViewChild('this.redirecting') public sharesubmitted: any
 
   constructor(private todosService: TodosService, private router: Router) { }
 
@@ -41,6 +43,7 @@ export class AddTodoComponent implements OnInit {
         this.router.navigate(['/']);
       });
     } else this.submitted = true;
+    
   }
 
   ngOnInit() {

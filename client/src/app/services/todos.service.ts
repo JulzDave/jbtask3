@@ -3,9 +3,10 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpErrorResponse } from '@angular/common/http';
 import { Observable, throwError } from 'rxjs';
 import { catchError } from 'rxjs/operators';
-
+import { CanDeactivate } from '@angular/router'
 import { ITodo } from '../models/todo.model'
 import { ISubject } from '../models/subjects.model'
+import { AddTodoComponent } from '../components/add-todo/add-todo.component';
 
 const httpOptions: any = {
   headers: new HttpHeaders({
@@ -62,4 +63,13 @@ export class TodosService {
         catchError(this.handleError)
       );
   }
+  
+  canDeactivate(component: AddTodoComponent): boolean{
+    debugger;
+    if( component.addTodoForm.dirty && !component.redirecting && component.addTodoForm.controls.description.value.length !== 0 ){
+      return confirm("Are you sure you want to navigate away from this page?")
+    }
+    return true;
+  }
+
 }
