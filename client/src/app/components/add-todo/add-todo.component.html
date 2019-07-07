@@ -2,7 +2,7 @@
   <form [formGroup]="addTodoForm" style="font-weight:bold;">
       <label>Assign task: <input class="input" type="text" formControlName="description" (input)="this.submitted = false"></label>
       <label> To: <select class="select" formControlName="chosenSubject">
-    <option *ngFor="let subject of allSubjects" [value]="subject._id">{{subject.name}}</option>
+    <option *ngFor="let subject of allSubjects" [value]="subject._id">{{subject.name | capitalize }}</option>
   </select></label>
 </form>
 <br/>
