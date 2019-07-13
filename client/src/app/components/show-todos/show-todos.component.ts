@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ElementRef } from '@angular/core';
 
 import { TodosService } from '../../services/todos.service';
 
@@ -14,11 +14,27 @@ import { ITodos } from '../../models/todos.model'
 export class ShowTodosComponent implements OnInit {
 
 
-  constructor(private todosService: TodosService) { }
+  constructor(private todosService: TodosService, private elem: ElementRef) { }
 
   todos: ITodos[] = [];
   subjects: ISubject[];
 
+  changeColor() {
+    let elements = this.elem.nativeElement.querySelectorAll('.todoLi');
+    let colorBtn = this.elem.nativeElement.querySelector('.colorBtn');
+    
+    if (elements[0].style.background === "dodgerblue") {
+      elements.forEach(el => { el.style.background = "white", el.style.color = "black" });
+      colorBtn.style.background = "dodgerblue";
+      colorBtn.style.color = "white";
+    }
+    else {
+      elements.forEach(el => { el.style.background = "dodgerblue", el.style.color = "white" });
+      colorBtn.style.background = "white";
+      colorBtn.style.color = "black";
+    }
+    
+  }
 
   deleteTodo(ev) {
     const itemToDelete: string = ev.target.previousElementSibling.id;
