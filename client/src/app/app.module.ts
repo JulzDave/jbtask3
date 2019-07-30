@@ -10,7 +10,7 @@ import { AddTodoComponent } from './components/add-todo/add-todo.component';
 import { ShowTodosComponent } from './components/show-todos/show-todos.component';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 import { CapitalizePipe } from './pipes/capitalize.pipe'
-
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
 @NgModule({
   declarations: [
     AppComponent,
@@ -24,7 +24,8 @@ import { CapitalizePipe } from './pipes/capitalize.pipe'
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

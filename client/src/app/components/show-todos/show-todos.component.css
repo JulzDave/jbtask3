@@ -16,7 +16,7 @@
     font-size: 16px;
 }
 
-.todo:hover span:nth-child(2) {
+.todo:hover span:nth-child(3) {
     display: block;
 }
 
@@ -56,7 +56,7 @@
     padding: 6px;
     border-radius: 11px;
     padding-right: 31px;
-    /* text-transform: capitalize; */
+    list-style-type: none;
     white-space: normal;
 }
 
@@ -146,6 +146,22 @@
       -webkit-transform: scale3d(1, 1, 1);
               transform: scale3d(1, 1, 1);
     }
+  }
+
+  .markBtn{
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    contain: content;
+    color: red;
+    background: red;
+    border: none;
+    margin-left: -19px;
+    margin-top: 9px;
+    cursor: pointer;
+    outline: none;
+    transform: scale(0.5);
   }
 
 @media only screen and (max-width:200px) {

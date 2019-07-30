@@ -37,3 +37,8 @@ a.navLink:active {
     letter-spacing: 12px;
     text-shadow: 0 0 7px black;
 }
+
+main {
+    /* text-align: center; */
+    position: relative;
+}

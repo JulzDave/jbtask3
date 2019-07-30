@@ -1,15 +1,19 @@
 <div class="addTodoCont">
-  <form [formGroup]="addTodoForm" style="font-weight:bold;">
-      <label>Assign task: <input class="input" type="text" formControlName="description" (input)="this.submitted = false"></label>
-      <label> To: <select class="select" formControlName="chosenSubject">
-    <option *ngFor="let subject of allSubjects" [value]="subject._id">{{subject.name | capitalize }}</option>
-  </select></label>
-</form>
-<br/>
-<button class="submit" (click)="addTodo()">Submit</button>
-    <div class="alert" *ngIf="submitted && checkErr"> 
-      <span *ngIf="checkErr.required"><br/>Please assign a task first...</span>
-      <span *ngIf="checkErr.minlength"><br/>Task must consist of minimum six characters...</span>
-    </div>
-    <div class="redirect" *ngIf="redirecting"><br/>Redirecting...</div>
+  <form [formGroup]="addTodoForm" (ngSubmit)="addTodo()" style="font-weight:bold;">
+    <label>Assign task: <input class="input" type="text" formControlName="description"
+        (input)="this.submitted = false"></label>
+    <label> To: <select class="select" formControlName="chosenSubject">
+        <option *ngFor="let subject of allSubjects" [value]="subject._id">{{ subject.name | capitalize }}</option>
+      </select></label><br/><br/><br/>
+      <button class="submit">Submit</button>
+  </form>
+  <!-- <select style="margin:30px;" class="select" [(ngModel)]=selectTWDB>
+    <option *ngFor="let subject of allSubjects" [value]="subject._id">{{ subject.name | capitalize }}</option>
+  </select> -->
+  <br />
+  <div class="alert err" *ngIf="submitted && checkErr">
+    <span *ngIf="checkErr.required"><br />Please assign a task first...</span>
+    <span *ngIf="checkErr.minlength"><br />Task must consist of minimum six characters...</span>
+  </div>
+  <div class="alert valid" *ngIf="redirecting"><br />Redirecting...</div>
 </div>

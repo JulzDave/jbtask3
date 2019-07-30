@@ -6,8 +6,8 @@ import { PageNotFoundComponent } from './components/page-not-found/page-not-foun
 import { TodosService } from './services/todos.service';
 
 const routes: Routes = [
-  {path:"", component:ShowTodosComponent},
-  {path:"add", canDeactivate:[TodosService], component:AddTodoComponent},
+  {path:"", component:ShowTodosComponent , data: { animation: 'isLeft' }},
+  {path:"add", canDeactivate:[TodosService], component:AddTodoComponent, data: { animation: 'isRight' }},
   { path: '**', component:PageNotFoundComponent}
 ];
 

@@ -3,8 +3,12 @@
     <ul *ngIf="subject.todos.length > 0" style="padding:0">
       <li class="name">{{ subject.name | capitalize }} - {{ subject.role }}</li>
       <ul class="todos" *ngFor="let todo of subject.todos">
-        <span class="todo"><li class="todoLi" id="{{ todo._id }}">{{ todo.Description | capitalize }} - {{ todo.Date | date }}</li><span class="delBtn" (click)="deleteTodo($event)">&times;</span></span>
-      </ul>
+        <span class="todo">
+          <button class="markBtn" (click)="mark(todoLi)">mark as done</button>
+          <li #todoLi class="todoLi">{{ todo.Description | capitalize }} - {{ todo.Date | date }}</li><span
+            class="delBtn" (click)="deleteTodo(todo._id)">&times;</span>
+          </span>
+        </ul>
     </ul>
   </div>
   <button class="colorBtn" (click)="changeColor()">Change Color!</button>

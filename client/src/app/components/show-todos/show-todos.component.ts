@@ -22,30 +22,42 @@ export class ShowTodosComponent implements OnInit {
   changeColor() {
     let elements = this.elem.nativeElement.querySelectorAll('.todoLi');
     let colorBtn = this.elem.nativeElement.querySelector('.colorBtn');
-    
+
     if (elements[0].style.background === "dodgerblue") {
-      elements.forEach(el => { el.style.background = "white", el.style.color = "black" });
+      elements.forEach(el => {
+        el.style.background = "white",
+          el.style.color = "black"
+      });
       colorBtn.style.background = "dodgerblue";
       colorBtn.style.color = "white";
     }
     else {
-      elements.forEach(el => { el.style.background = "dodgerblue", el.style.color = "white" });
+      elements.forEach(el => {
+        el.style.background = "dodgerblue",
+          el.style.color = "white"
+      });
       colorBtn.style.background = "white";
       colorBtn.style.color = "black";
     }
-    
   }
 
-  deleteTodo(ev) {
-    const itemToDelete: string = ev.target.previousElementSibling.id;
+  deleteTodo(todoId) {
+    const itemToDelete: string = todoId;
     this.todosService.deleteTodo(itemToDelete).subscribe(() => {
-      for (let i: number = 0; i < this.todos.length; i++) {
-        const index = this.todos[i].todos.findIndex(item => item._id === ev.target.previousElementSibling.id);
+      this.todos.forEach(todo => {
+        const index = todo.todos.findIndex(item => item._id === todoId);
         if (index !== -1) {
-          this.todos[i].todos.splice(index, 1);
+          todo.todos.splice(index, 1);
         }
-      }
+      })
     })
+  }
+
+  mark(todoLi) {
+    if (todoLi.style.textDecoration === 'line-through') {
+      return todoLi.style.textDecoration = 'none';
+    }
+    todoLi.style.textDecoration = 'line-through'
   }
 
   ngOnInit() {
@@ -53,15 +65,15 @@ export class ShowTodosComponent implements OnInit {
       if (subjectData) {
         this.subjects = subjectData
         this.todosService.getTodos().subscribe((todoData: ITodo[]) => {
-          for (let i: number = 0; i < this.subjects.length; i++) {
+          this.subjects.forEach(subject => {
             this.todos.push({
-              name: this.subjects[i].name, role: this.subjects[i].role, todos: todoData.filter((todo) => {
-                return todo.subject === this.subjects[i]._id;
-              })
+              name: subject.name,
+              role: subject.role,
+              todos: todoData.filter(todo => { return todo.subject === subject._id; } )
             })
-          }
-        })
+          })
+        });
       }
-    })
+    });
   }
 }

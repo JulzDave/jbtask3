@@ -18,7 +18,7 @@ const httpOptions: any = {
 @Injectable({
   providedIn: 'root'
 })
-export class TodosService {
+export class TodosService implements CanDeactivate<AddTodoComponent> {
 
   constructor(private http: HttpClient) { }
 
@@ -64,9 +64,11 @@ export class TodosService {
       );
   }
   
-  canDeactivate(component: AddTodoComponent): boolean{
-    debugger;
-    if( component.addTodoForm.dirty && !component.redirecting && component.addTodoForm.controls.description.value.length !== 0 ){
+  canDeactivate(addTodoComponent: AddTodoComponent): boolean {
+    if( addTodoComponent.addTodoForm.controls.description.dirty && 
+      !addTodoComponent.redirecting && 
+      addTodoComponent.addTodoForm.controls.description.value.length !== 0 )
+      {
       return confirm("Are you sure you want to navigate away from this page?")
     }
     return true;
